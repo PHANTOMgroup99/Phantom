@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white h-screen flex flex-col">
+    <div class="p-4 bg-gray-800 border-b border-gray-700">Phantom Aurora Chat</div>
+    <div id="chat-box" class="flex-1 p-4 overflow-y-auto"></div>
+    <div class="p-4 bg-gray-800 flex">
+        <input id="msg" class="flex-1 bg-gray-700 p-2 rounded" placeholder="Ketik pesan...">
+        <button onclick="send()" class="ml-2 bg-blue-600 px-4 py-2 rounded">Kirim</button>
+    </div>
+</body>
+</html>
