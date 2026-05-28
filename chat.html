@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <style>
+        body { background: #000; color: #00ff00; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
+        #chat-window { height: 70vh; border: 1px solid #00ff00; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
+        .input-area { display: flex; gap: 10px; }
+        input { flex: 1; background: #111; color: #00ff00; border: 1px solid #00ff00; padding: 10px; }
+        button { background: #00ff00; color: #000; border: none; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>PHANTOM // CHAT_ROOM</h1>
+    <div id="chat-window"></div>
+    <div class="input-area">
+        <input type="text" id="chatInput" placeholder="Ketik pesan...">
+        <button onclick="sendMessage()">SEND</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let input = document.getElementById("chatInput");
+            let chatWindow = document.getElementById("chat-window");
+            if(input.value !== "") {
+                chatWindow.innerHTML += `<p>> ${input.value}</p>`;
+                input.value = "";
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
+
