@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <title>PHANTOM // ACCESS</title>
     <style>
-        body { background: #000; color: #00ff00; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        .login-box { border: 1px solid #00ff00; padding: 20px; text-align: center; }
-        input { background: #111; color: #00ff00; border: 1px solid #00ff00; padding: 10px; margin-top: 10px; }
-        button { background: #00ff00; color: #000; border: none; padding: 10px; cursor: pointer; margin-top: 10px; }
+        body { background: #000; color: #00ff00; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-box { border: 1px solid #00ff00; padding: 20px; text-align: center; width: 300px; }
+        input { background: #111; color: #00ff00; border: 1px solid #00ff00; padding: 10px; width: 80%; margin-top: 10px; text-align: center; }
+        button { background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; margin-top: 15px; font-weight: bold; }
+        button:hover { background: #008800; }
     </style>
 </head>
 <body>
     <div class="login-box">
         <h1>PHANTOM // ACCESS</h1>
-        <input type="text" id="userid" placeholder="ENTER_UNIQUE_ID">
+        <input type="text" id="userid" placeholder="ENTER_ID">
         <br>
         <button onclick="checkAccess()">AUTH_VERIFY</button>
     </div>
 
     <script>
-        const validIDs = ["Christ Admin"PHANTOM_01", "PHANTOM_02"]; // ID ini bisa lo update kapan aja
         function checkAccess() {
-            let id = document.getElementById('userid').value;
-            if(validIDs.includes(id)) {
-                alert("ACCESS_GRANTED");
-                window.location.href = "chat.html"; // Nanti kita buat file chat.html nya
+            let id = document.getElementById('userid').value.trim();
+            // ID yang diijinkan
+            if(id === "Christ Admin") {
+                window.location.href = "chat.html";
             } else {
                 alert("ACCESS_DENIED // TERMINATING");
             }
